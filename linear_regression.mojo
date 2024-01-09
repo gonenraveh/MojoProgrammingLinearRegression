@@ -114,7 +114,7 @@ fn matmul(C: Matrix, A: Matrix, B: Matrix):
             for n in range(C.cols):
                 C[m, n] += A[m, k] * B[k, n]
 
-fn logistic_regression(x:Matrix, y_true:Matrix, M:Int, eta:Float32) -> Matrix:
+fn linear_regression(x:Matrix, y_true:Matrix, M:Int, eta:Float32) -> Matrix:
     '''
     one input scalar, one output scalar linear regression algorithm.
     output model is theta array with 2 values.
@@ -181,7 +181,7 @@ fn main():
         x[i,1] = xy[2*i]
         y_true[i] = xy[2*i+1]
     #
-    let theta = logistic_regression(x=x, y_true=y_true, M=M, eta=eta)
+    let theta = linear_regression(x=x, y_true=y_true, M=M, eta=eta)
     print('MOJO Regression Output:')
     print('Intercept ', theta[0])
     print('X Variable', theta[1])
